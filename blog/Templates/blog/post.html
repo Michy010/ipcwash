@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+<div class="card mt-3">
+    <div class="card-body">
+        <!-- Post header with username and timestamp -->
+        <h5 class="card-title">{{ post.user.username }}</h5>
+        <p class="card-subtitle text-muted">{{ post.timestamp }}</p>
+
+        <!-- Post content (text) -->
+        {% if post.content %}
+        <p class="card-text">{{ post.content }}</p>
+        {% endif %}
+
+        <!-- Display image if it exists -->
+        {% if Post.img %}
+        <img src="{{ post.img.url }}" class="card-img-top" alt="Image">
+        {% endif %}
+
+        <!-- Display video if it exists -->
+        {% if post.video %}
+        <video controls class="card-img-top">
+            <source src="{{ post.video.url }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        {% endif %}
+
+        <!-- Add options like like, comment, and share buttons if needed -->
+        <div class="mt-2">
+            <button class="btn btn-outline-primary">Like</button>
+            <button class="btn btn-outline-secondary">Comment</button>
+            <button class="btn btn-outline-success">Share</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

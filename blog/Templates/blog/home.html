@@ -1,0 +1,47 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+{% block title %} <head><title>Home</title></head> {% endblock%}
+
+<div class="pic">
+    <img class="container" src="{% static 'blog/img/wash.jpg' %}" alt="wash">
+</div>
+
+<div class="box1"> <br>
+    <div class="inner-box">
+        <a href="{% url 'blog:about' %}"><p><h1>About Us</h1></p></a>
+        <p id="About-texts">
+            The IPCWASH MUHAS organisation for students of Environmental Health is a non-profit organisation 
+            dedicated to promoting and advancing the principles of Infections Prevention and Control(IPC) and 
+            Water, Sanitation, and Hygiene (WASH) among students pursuing studies in environmental health.
+        </p>
+    </div> <br>
+</div>
+
+<div class="box1"> <br>
+    <div class="inner-box">
+        <p><h1>Total Members</h1></p>
+          <h2><p style="font-size: larger; color: blue;"> 200+</p></h2>
+    </div> <br>
+</div>
+  
+      <!-- Display user posts in a loop -->
+      {% for Post in Posts %}
+      <div class="post">
+        <img src="{{post.img.url}}" alt="Post Image">
+        <video controls>
+            <source src="{{post.video.url}}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p>Posted by: {{post.user.username}}</p>
+        <p>Timestamp by: {{post.timestamp}}</p>
+      </div>
+      {% endfor %}
+
+      {% if user.is_superuser %}
+      <div class="createpost">
+        <h3>Create a New Post <a href="{% url 'blog:create_post' %}">Create</a></h3>
+      </div>
+      {% endif %}
+      
+{% endblock %}

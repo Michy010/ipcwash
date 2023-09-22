@@ -15,6 +15,6 @@ Pre requisities
 3. Css and HTML
 
 Installation steps
-1. Clone the repository to your local machine by running; 'git clone git@github.com:Michy010/IPCWASH-MUAS.git'
-2. Install pillow by 'pip install pillow'
+1. Clone the repository to your local machine by running; ('git clone git@github.com:Michy010/IPCWASH-MUAS.git')
+2. Install pillow by ('pip install pillow')
 3. Runserver 

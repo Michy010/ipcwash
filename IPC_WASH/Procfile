@@ -1,0 +1,1 @@
+web: gunicorn IPC_WASH.wsgi:application --log-file -

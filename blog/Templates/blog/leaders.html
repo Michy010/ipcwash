@@ -2,5 +2,28 @@
 {% load static %}
 {% block content %}
 {% block title %} <head><title>Leaders</title></head> {% endblock%}
-<h1>Leaders</h1>
+
+<h1 id="Locate-center">Leadership Team</h1>
+    {% for leader in leaders %}
+    <div class="leader-card">
+        <h2>{{ leader.position }}</h2>
+        <div class="leader-avatar">
+            <img src="{{ leader.image.url }}" alt="{{ leader.name }}" class="rounded-image leader-image">
+        </div>
+        <p>{{ leader.about_me }}</p>
+        <p>Contacts:</p>
+        <ul class="contact-list">
+            {% if leader.twitter %}
+                <li class="contact-item"><a href="{{ leader.twitter }}" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+            {% endif %}
+            {% if leader.instagram %}
+                <li class="contact-item"><a href="{{ leader.instagram }}" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            {% endif %}
+            {% if leader.email %}
+                <li class="contact-item"><a href="mailto:{{ leader.email }}"><i class="far fa-envelope"></i> Email</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    {% endfor %}
+
 {% endblock %}

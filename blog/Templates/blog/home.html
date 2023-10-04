@@ -3,8 +3,8 @@
 {% block content %}
 {% block title %} <head><title>Home</title></head> {% endblock%}
 
-<div class="pic">
-    <img class="container" src="{% static 'blog/img/wash.jpg' %}" alt="wash">
+<div>
+    <img class="container-img" src="{% static 'blog/img/wash.jpg' %}" alt="wash" >
 </div>
 
 <div class="box1"> <br>
@@ -26,22 +26,30 @@
 </div>
   
       <!-- Display user posts in a loop -->
-      {% for Post in Posts %}
-      <div class="post">
-        <img src="{{post.img.url}}" alt="Post Image">
-        <video controls>
-            <source src="{{post.video.url}}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <p>Posted by: {{post.user.username}}</p>
-        <p>Timestamp by: {{post.timestamp}}</p>
-      </div>
-      {% endfor %}
 
-      {% if user.is_superuser %}
-      <div class="createpost">
-        <h3>Create a New Post <a href="{% url 'blog:create_post' %}">Create</a></h3>
-      </div>
+  {% for post in posts %}
+  <div class="post-group">
+    <div class="post">
+      <p>
+      <div class="logo-on-post">
+        <img src="{% static 'blog/img/logo.jpg' %}" alt="IPCWASH" style="width: 80px;height: 80px; position: absolute; top: 0; left: 0; margin-bottom: 50px;"> <br>
+      </div> <br>
+      </p> <br>
+      <hr>
+
+      <p>{{ post.content }}</p> <br>
+      {% if post.file %}
+      {% if ".mp4" in post.file.name|lower %}
+          <video controls style="width: 100%; height: 30%;">
+            <source src="{{ post.file.url }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        {% else %}
+          <img src="{{ post.file.url }}" alt="Image" style="width: 100%; height: 30%; object-fit: cover;">
+        {% endif %}
       {% endif %}
-      
+    </div> <br>
+    <p class="timestamp">Posted at: <b>{{post.timestamp}}</b></p>
+  </div> <br>
+  {% endfor %}  
 {% endblock %}

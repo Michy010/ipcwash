@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'blog/main.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     
 </head>
 <body>
@@ -34,10 +35,13 @@
             <li class="menu-item"><a href="{% url 'blog:home' %}">Home</a></li>
             <li class="menu-item"><a href="{% url 'blog:about' %}">About</a></li>
             <li class="menu-item"><a href="{% url 'blog:leaders' %}">Leaders</a></li>
+            <li class="menu-item"><a href="{% url 'blog:create_post' %}">Post</a></li>
+            <li class="menu-item"><a href="{% url 'blog:create_leader' %}">Create Leader</a></li>
         </ul>
         {% endblock %}
         </div>
     </div>
+
     {% block content %}
     {% endblock %}
 
@@ -49,6 +53,16 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<footer>
+    <div class="contact-info">
+        <a href="mailto:ipcwashmuhas@gmail.com"><i class="fas fa-envelope"></i> ipcwashmuhas@gmail.com</a>
+        <a href="https://twitter.com/ipcwashclub?t=zcDSCAid1vFIc9hU8UIRJw&s=09" target="_blank"><i class="fab fa-twitter"></i> ipcwashmuhas</a>
+        <a href="https://www.instagram.com/ipcwashmuhas" target="_blank"><i class="fab fa-instagram"></i> ipcwashmuhas</a>
+        <a href="https://www.facebook.com/ipcwashmuhas" target="_blank"><i class="fab fa-facebook"></i> ipcwashmuhas</a>
+        <a href="https://www.youtube.com/ipcwashclub2022" target="_blank"><i class="fab fa-youtube"></i> ipcwashmuhas</a>
+    </div>
+</footer>
 
 </body>
 </html>

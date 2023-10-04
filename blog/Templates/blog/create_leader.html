@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+{% block title %} <title>Create Leader</title>{% endblock %}
+<form  method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit"><b>Create</b></button>
+</form>
+{% endblock %}

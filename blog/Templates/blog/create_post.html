@@ -1,7 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{% url 'blog:home' %}">Home</a>
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+{% block title %} <title>Create Post</title>{% endblock %} <br>
     <!-- Other navigation links or elements go here -->
-</nav>
 
 <div class="container mt-4">
     <h1>Create a New Post</h1>
@@ -9,7 +10,8 @@
     <!-- Create a form for superusers to create new posts -->
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
+        <b>{{ form.as_p }}</b>
         <button type="submit" class="btn btn-primary">Post</button>
     </form>
 </div>
+{% endblock %}

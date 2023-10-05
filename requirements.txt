@@ -1,10 +1,8 @@
-Collecting gunicorn
-  Obtaining dependency information for gunicorn from https://files.pythonhosted.org/packages/0e/2a/c3a878eccb100ccddf45c50b6b8db8cf3301a6adede6e31d48e8531cab13/gunicorn-21.2.0-py3-none-any.whl.metadata
-  Using cached gunicorn-21.2.0-py3-none-any.whl.metadata (4.1 kB)
-Collecting packaging (from gunicorn)
-  Obtaining dependency information for packaging from https://files.pythonhosted.org/packages/ec/1a/610693ac4ee14fcdf2d9bf3c493370e4f2ef7ae2e19217d7a237ff42367d/packaging-23.2-py3-none-any.whl.metadata
-  Using cached packaging-23.2-py3-none-any.whl.metadata (3.2 kB)
-Using cached gunicorn-21.2.0-py3-none-any.whl (80 kB)
-Using cached packaging-23.2-py3-none-any.whl (53 kB)
-Installing collected packages: packaging, gunicorn
-Successfully installed gunicorn-21.2.0 packaging-23.2
+asgiref==3.7.2
+Django==4.2.5
+gunicorn==21.2.0
+packaging==23.2
+Pillow==10.0.1
+sqlparse==0.4.4
+tzdata==2023.3
+whitenoise==6.5.0

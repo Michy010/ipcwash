@@ -26,9 +26,9 @@ MEDIA_URL = '/media/'
 SECRET_KEY = 'django-insecure-#_snv1s%p-oi!)5as9fuh+r&0wlxznrrkda6!l0_wf*p=)8aa)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["ipcwash-muhas-production.up.railway.app"]
 
 
 # Application definition
@@ -135,9 +135,9 @@ STORAGES = {
 
 
 
-# CSRF_TRUSTED_ORIGINS = ["https://ipcwash-muhas-production.up.railway.app"]
-# CSRF_ALLOWED_ORIGINS = ["https://ipcwash-muhas-production.up.railway.app"]
-# CORS_ORIGINS_WHITELIST = ["https://ipcwash-muhas-production.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["https://ipcwash-muhas-production.up.railway.app"]
+CSRF_ALLOWED_ORIGINS = ["https://ipcwash-muhas-production.up.railway.app"]
+CORS_ORIGINS_WHITELIST = ["https://ipcwash-muhas-production.up.railway.app"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

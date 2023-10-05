@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from . models import Post, Leader
 from .forms import PostForm, LeaderForm
-from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.models import User
 
 # Create your views here.
@@ -17,10 +16,7 @@ def leaders (request):
     context = {'leaders':leaders}
     return render (request, 'blog/leaders.html', context)
 
-def is_superuser(user):
-    return user.is_superuser
 
-@user_passes_test(is_superuser)
 def create_leader(request):
     if request.method== 'POST':
         form = LeaderForm(request.POST, request.FILES)
@@ -35,10 +31,7 @@ def create_leader(request):
 def post (request):
     return render (request, 'blog/post.html')
 
-@user_passes_test(is_superuser)
 def create_post (request):
-    if not request.user.is_superuser:
-        return redirect ('/')
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():

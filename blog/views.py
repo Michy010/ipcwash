@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 # Create your views here.
 def home (request):
     posts = Post.objects.all().order_by('-timestamp')
-    return render (request, 'blog/home.html', {'posts':posts})
+    return render (request, 'blog/index.html', {'posts':posts})
 
 def about (request):
     return render (request, 'blog/about.html')

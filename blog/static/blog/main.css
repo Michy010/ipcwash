@@ -102,7 +102,66 @@ ul.menu{
     padding: 0;
     background-color:blue ;
     overflow: hidden;
+    /* display: none;
+    list-style: none;
+    padding: 0; */
 }
+
+/* .menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    margin: 20px;
+} 
+
+ .navbar {
+    background-color: #555;
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    float: left;
+}
+
+.navbar ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.sub-menu {
+    display: none;
+}
+
+@media screen and (max-width:768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .navbar ul {
+        display: none;
+    }
+
+    .navbar ul li {
+        width: 100%;
+    }
+
+    .navbar ul li a {
+        text-align: left;
+    }
+
+    .sub-menu {
+        display: block;
+    }
+} */
+
 li.menu-item {
     float: left;
 }

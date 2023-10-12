@@ -10,4 +10,6 @@ urlpatterns = [
     path('post/', views.post , name= 'post'),
     path('create_post/', views.create_post, name= 'create_post'),
     path('create_leader/',views.create_leader, name= 'create_leader'),
+    path('login/', views.login_page, name= 'login'),
+    # path('logout/', views.logout_page, name= 'logout'),
 ]

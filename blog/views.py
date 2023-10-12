@@ -1,4 +1,7 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from . models import Post, Leader
 from .forms import PostForm, LeaderForm
 from django.contrib.auth.models import User
@@ -15,8 +18,7 @@ def leaders (request):
     leaders = Leader.objects.all ()
     context = {'leaders':leaders}
     return render (request, 'blog/leaders.html', context)
-
-
+@login_required
 def create_leader(request):
     if request.method== 'POST':
         form = LeaderForm(request.POST, request.FILES)
@@ -30,7 +32,7 @@ def create_leader(request):
 
 def post (request):
     return render (request, 'blog/post.html')
-
+@login_required
 def create_post (request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
@@ -42,3 +44,22 @@ def create_post (request):
     else:
         form = PostForm ()
     return render (request, 'blog/create_post.html', {'form':form})
+
+def login_page (request):
+    if request.method == 'POST':
+        username = request.POST.get ('username')
+        password = request.POST.get ('password')
+
+        user = authenticate(request, username = username, password = password)
+        if user is not None:
+            login (request, user)
+            return redirect ('/')
+        else:
+            messages.error(request, 'password or username is incorrect!')
+
+    return render (request, 'blog/login.html')
+
+# @login_required
+# def logout_page (request):
+#     logout (request)
+#     return redirect ('/')

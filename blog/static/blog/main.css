@@ -98,7 +98,7 @@ a{
 }
 .About-box{
     margin: 15px;
-    border: 2px solid black;
+    border: 1px solid blue;
     border-radius: 10px;
     padding: 10px;
     background-color: white;
@@ -164,7 +164,7 @@ footer {
 
 .contact-list {
     list-style-type: none;
-    padding: 0;
+    padding: 5px;
 }
 
 .contact-item {

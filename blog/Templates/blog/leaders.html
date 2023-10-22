@@ -10,6 +10,7 @@
         <div class="leader-avatar">
             <img src="{{ leader.image.url }}" alt="{{ leader.name }}" class="rounded-image leader-image">
         </div>
+        <p><b>{{leader.name}}</b></p>
         <p>{{ leader.about_me }}</p>
         <p>Contacts:</p>
         <ul class="contact-list">
@@ -23,6 +24,8 @@
                 <li class="contact-item"><a href="mailto:{{ leader.email }}"><i class="far fa-envelope"></i> Email</a></li>
             {% endif %}
         </ul>
+        {% empty %}
+        <b>No any leader created.</b>
     </div>
     {% endfor %}
 

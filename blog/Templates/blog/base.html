@@ -36,13 +36,15 @@
             <ul>
                 <li><a href="{% url 'blog:home' %}">Home</a></li>
                 <li><a href="{% url 'blog:about' %}">About</a></li>
-                <li><a href="{% url 'blog:leaders' %}">Leaders</a></li>
+                <li><a href="{% url 'blog:leaders' %}">Cabinet</a></li>
                 {% if user.is_authenticated%}
                 <li><a href="{% url 'blog:create_post' %}">Post</a></li>
                 <li><a href="{% url 'blog:create_leader' %}">Create Leader</a></li>
                 {% endif %}
                 <li><a href="{% url 'blog:login' %}">Login</a></li>
+                {% if user.is_authenticated %}
                 <li><a href="{% url 'blog:logout' %}">Logout</a></li>
+                {% endif %}
             </ul>
         </nav>
     </div>

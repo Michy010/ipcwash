@@ -59,7 +59,7 @@ def login_page (request):
 
     return render (request, 'blog/login.html')
 
-# @login_required
-# def logout_page (request):
-#     logout (request)
-#     return redirect ('/')
+@login_required
+def logout_page (request):
+    logout (request)
+    return render (request, 'blog/logout.html')

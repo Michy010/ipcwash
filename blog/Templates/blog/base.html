@@ -28,45 +28,29 @@
     
     </header>
 
-    <div class="header">
-        <div class="menu">
-        {% block menu %}
-        <ul class="menu">
-            <li class="menu-item"><a href="{% url 'blog:home' %}">Home</a></li>
-            <li class="menu-item"><a href="{% url 'blog:about' %}">About</a></li>
-            <li class="menu-item"><a href="{% url 'blog:leaders' %}">Leaders</a></li>
-            <li class="menu-item"><a href="{% url 'blog:create_post' %}">Post</a></li>
-            <li class="menu-item"><a href="{% url 'blog:create_leader' %}">Create Leader</a></li>
-            <li class="menu-item"><a href="{% url 'blog:login' %}">Login</a></li>
-        </ul>
-        {% endblock %}
-        </div>
+    
+    {% block menu %}
+    <div class="heado">
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <nav id="navbar">
+            <ul>
+                <li><a href="{% url 'blog:home' %}">Home</a></li>
+                <li><a href="{% url 'blog:about' %}">About</a></li>
+                <li><a href="{% url 'blog:leaders' %}">Leaders</a></li>
+                {% if user.is_authenticated%}
+                <li><a href="{% url 'blog:create_post' %}">Post</a></li>
+                <li><a href="{% url 'blog:create_leader' %}">Create Leader</a></li>
+                {% endif %}
+                <li><a href="{% url 'blog:login' %}">Login</a></li>
+                <li><a href="{% url 'blog:logout' %}">Logout</a></li>
+            </ul>
+        </nav>
     </div>
+{% endblock %}
 
-    {% block content %}
-    {% endblock %}
-
-<!-- <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const menu = document.querySelector('.menu');
-
-    hamburgerMenu.addEventListener('click', () => {
-        menu.classList.toggle('active');
-    });
-}) -->
-
-</script>
-
-    <!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+{% block content %}
+{% endblock %}
+    
 <footer>
     <h1>Contact Us</h1>
     <div class="contact-info">
@@ -76,9 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <a href="https://www.facebook.com/ipcwashmuhas" target="_blank"><i class="fab fa-facebook"></i> ipcwashmuhas</a>
         <a href="https://www.youtube.com/ipcwashclub2022" target="_blank"><i class="fab fa-youtube"></i> ipcwashmuhas</a>
     </div> <br>
-    <p>&copy; 2023 IPCWASH-MUHAS Organisation</p>
+    <p>Copyright &copy; 2023 IPCWASH-MUHAS Organisation</p>
 </footer>
 
+<script src="{% static 'blog/js/script.js' %}"></script>
 </body>
 </html>
 

@@ -3,6 +3,7 @@ Django==4.2.5
 gunicorn==21.2.0
 packaging==23.2
 Pillow==10.0.1
+pyscopg2==66.0.2
 sqlparse==0.4.4
 tzdata==2023.3
 whitenoise==6.5.0

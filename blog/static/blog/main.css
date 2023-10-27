@@ -301,35 +301,3 @@ label {
     }
 }
 
-/* css to display the popping up announcement */
-.announcement-popup {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    z-index: 1000;
-}
-
-.announcement-popup h3 {
-    font-size: 18px;
-    margin: 0;
-    padding: 0;
-}
-
-.announcement-popup p {
-    font-size: 14px;
-    margin: 10px 0;
-}
-
-.close-button {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    cursor: pointer;
-    color: #888;
-    font-size: 20px;
-}

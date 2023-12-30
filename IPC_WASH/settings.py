@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
+import dj_database_url
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,7 +32,7 @@ SECRET_KEY = 'django-insecure-#_snv1s%p-oi!)5as9fuh+r&0wlxznrrkda6!l0_wf*p=)8aa)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["192.168.43.39", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -53,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'Whitenoise.middleware.WhiteNoiseMiddleware',
     
 ]
 
@@ -125,7 +129,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # STATIC_ROOT = BASE_DIR / "staticfiles"
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STORAGES = {
     "default": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
@@ -152,3 +156,5 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'login'
 
 LOGOUT_REDIRECT_URL = '/'
+
+django_heroku.settings(locals())

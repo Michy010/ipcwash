@@ -18,6 +18,7 @@ IPCWASH-MUHAS is a website made in Django, designed to facilitate the management
 
 ## Tech-Stack
 - HTML
+- JavaScript
 - MySQL
 - Python/Django
 

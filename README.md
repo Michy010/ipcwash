@@ -1,20 +1,55 @@
-IPCWASH-MUHAS ORGANISATION WEBSITE
+# IPCWASH-MUHAS
 
-DESCRIPTION OF THE PROJECT
+IPCWASH-MUHAS is a website made in Django, designed to facilitate the management of posts for the organization and provide information to interested individuals.
 
-IPCWASH-MUHAS it is the website of non-governmental organisation named IPCWASH
-This website will be used by the members of the organisation named above to post about the events happening in their organisation and also it will describe the IPCWASH organisation in and out so that people can be aware of what is IPCWASH.
+## Problem Statement
 
-The website has home page where all posts are displayed and also has the about page where all informations about IPCWASH are displayed here, and also has the Leaders page where the informations about current leaders are aploaded there, and also has the Post page to handle all posts.
+- Files lost/damaged
+- Difficult to search records
+- Cost/space consuming
 
-HOW TO INSTALL 
+## Overview
 
-Pre requisities
-1. Python language
-2. Javascript
-3. Css and HTML
+**Purpose**: IPCWASH-MUHAS is an application intended for managing organization posts. It provides a platform for administrators to create, edit, and manage posts related to the organization's activities.
 
-Installation steps
-1. Clone the repository to your local machine by running; ('git clone git@github.com:Michy010/IPCWASH-MUAS.git')
-2. Install pillow by ('pip install pillow')
-3. Runserver 
+**Objective**:
+- Improvement in control and performance
+- Save cost/time
+
+## Tech-Stack
+- HTML
+- JavaScript
+- MySQL
+- Python/Django
+
+## Features (Admin Module)
+
+- Admin Dashboard
+- Add/Manage posts
+- Search posts by category or keyword
+- Edit and delete posts
+- Change/recover own password
+
+## Future Scope
+
+- Integration of multimedia content (images, videos) in posts
+- User authentication and access control for different user roles
+- Integration with social media platforms for sharing posts
+- Real-time notifications for new posts or updates
+
+## References
+
+- Medium
+- Stack Overflow
+
+## How To Run The Project?
+
+To run this project, you must have Python installed on your PC. After downloading the project, follow these steps:
+
+**Step-1**: Extract/unzip the file
+
+**Step-2**: Go inside the project folder, open cmd and type the following commands to install Django Framework and run the web server:
+
+```bash
+pip install -r requirements.txt
+python manage.py runserver
